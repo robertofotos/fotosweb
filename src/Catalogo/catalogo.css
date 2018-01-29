@@ -1,0 +1,43 @@
+.productos {
+	background-color: white;
+	font-family: Historia;
+	font-size: 20px;
+	text-align: center;
+}
+
+.eventos div {
+	display: inline-block;
+	padding: 10px;
+}
+
+.producto {
+	max-width: 700px;
+	margin: auto;
+	border: solid 1px red;
+	margin-bottom: 50px;
+
+	-webkit-box-shadow   : 0 0 8px 4px rgba(0, 0, 0, .5);
+    box-shadow           : 0 0 8px 4px rgba(0, 0, 0, .5);
+
+   -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 );
+}
+
+.producto div {
+	display: inline-block;
+	padding: 10px;
+	margin: auto;
+}
+
+.title {
+	font-size: 25px;
+	font-family: "Catalogo";
+	padding: 10px;
+}

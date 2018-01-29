@@ -1,0 +1,40 @@
+.contacto {
+	text-align: center;
+	font-size: 20px;
+	font-family: Historia;
+	margin: 5px;
+	letter-spacing: 2px;
+}
+
+.about {
+	text-align: center;
+	font-size: 18px;
+	font-family: Historia;
+	font-weight: bold;
+}
+.about img {
+	 -webkit-border-radius: 25px;
+     -moz-border-radius: 25px;
+          border-radius: 25px;
+   -webkit-box-shadow   : 0 0 8px 4px rgba(0, 0, 0, .5);
+   box-shadow           : 0 0 8px 4px rgba(0, 0, 0, .5);
+   margin: 10px;
+}
+
+.historia {
+	max-width: 800px;
+	margin: auto;
+	margin-bottom: 50px;
+	font-size: 20px;
+	font-family: Historia;
+	padding: 5px;
+	text-align: justify;
+}
+
+.link {
+	color: blue;
+	text-decoration: underline;
+}
+.link:hover {
+	cursor: pointer;
+}

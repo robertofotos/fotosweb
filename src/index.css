@@ -1,18 +1,17 @@
 body {
-    background-image    : url('/img/ballroom/9.jpg');
-    -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  -o-background-size: 100% auto;
-  background-size: 100% auto;
-   background-repeat:no-repeat;
-   background-attachment:fixed;
-   background-position: center;
-   transition: all 0.5s ease; 
+	background-color: white;
+    padding: 0;
+    margin: 0;
 }
 
 @font-face {
-    font-family         : "Impact";
-    src                 : url("/fonts/impact.woff");
+    font-family         : "Historia";
+    src                 : url("/fonts/historia.woff");
+}
+
+@font-face {
+    font-family         : "Catalogo";
+    src                 : url("/fonts/catalogo.woff");
 }
 
 .sombra {
@@ -21,7 +20,11 @@ body {
 }
 
 .centro {
+    display: block;
     margin              : auto;
+}
+.bold {
+  font-weight: bold;
 }
 
 .redondear {
@@ -30,3 +33,18 @@ body {
           border-radius: 10px;
 }
 
+.contenido {
+    background-color: white;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    bottom: 0;
+    overflow: scroll;
+}
+
+.reproductor {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 5000;
+}

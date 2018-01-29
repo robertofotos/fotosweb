@@ -1,0 +1,43 @@
+.portaretrato {
+    width: 100%;
+    text-align: center;
+
+}
+
+.galeria {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: auto;
+    border: solid 5px white;
+}
+
+.imagen {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.anterior {
+    position: absolute;
+    top: 40%;
+    left: 5px;
+}
+
+.siguiente {
+    position: absolute;
+    top: 40%;
+    right: 5px;
+}
+
+.siguiente, .anterior {
+    background-color: rgba(255,255,255,.5);
+    border: none;
+    height: 13%;
+}
+
+.cargando {
+    background-color: rgba(255,255,255,.5);
+    position: absolute;
+    top:2px;
+    left: 2px;
+}
