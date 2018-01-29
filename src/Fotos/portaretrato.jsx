@@ -7,42 +7,40 @@ class PortaRetrato extends Component {
         super(props)
             this.state = {
                 img:     '',
-                galeria: this.props.galeria,
                 fotoActual: 0,
-                maxActual: this.props.totalDeFotos,
                 cargando: false,
             }
+        
+        this.imagenNueva = new Image();
+        this.imagenNueva.onload = (img) => {
+          this.setState({
+                     img: img.target.src,
+                cargando: false,
+            })
+        }
     }
 
     componentDidMount() {
-        this.cargarImg({target: {name:"siguiente"} })
+        this.cargarImg('siguiente')
     }
 
+
     cargarImg = (boton) => {
-        let imagenNueva = new Image();
-        let nuevaFoto = 0
-        if (boton.target.name==="siguiente") {
-            nuevaFoto = this.state.fotoActual + 1
-            if (nuevaFoto > this.state.maxActual) nuevaFoto = 1
+        let nuevaFoto = this.state.fotoActual
+
+        if (boton==="siguiente") {
+            nuevaFoto++
         } else {
-            nuevaFoto = this.state.fotoActual - 1
-            if (nuevaFoto < 1) nuevaFoto = this.state.maxActual
+            nuevaFoto--
         }
-        
-        let entorno = this
+        if (nuevaFoto < 1) nuevaFoto = this.props.totalDeFotos
+        if (nuevaFoto > this.props.totalDeFotos) nuevaFoto = 1
         this.setState({
             cargando: true,
+            fotoActual: nuevaFoto,
         })
-        imagenNueva.onload = function(img) {
-          entorno.setState({
-                     img: img.target.src,
-                cargando: false,
-              fotoActual: nuevaFoto,
-            })
-        };
-        imagenNueva.src = `/img/${this.state.galeria}/${nuevaFoto}.jpg`
-        //this.setState({
-        //})
+
+        this.imagenNueva.src = `/img/${this.props.galeria}/${nuevaFoto}.jpg`
     }
 
     render() {
@@ -55,13 +53,18 @@ class PortaRetrato extends Component {
 
                     <img className="imagen" src={this.state.img} alt='' />
             
-                    <button className="anterior" onClick={this.cargarImg} 
-                            name="anterior" disabled={this.state.cargando} >
+                    <button className="anterior"
+                            name="anterior"
+                            id="anterior"
+                            onClick={()=>this.cargarImg('anterior')} 
+                            disabled={this.state.cargando} >
                         <span> <Glyphicon glyph='chevron-left'/> </span>
                     </button>
             
-                    <button className="siguiente" onClick={this.cargarImg} 
-                            name="siguiente" disabled={this.state.cargando}>
+                    <button className="siguiente"
+                            onClick={()=>this.cargarImg('siguiente')} 
+                            name="siguiente"
+                            disabled={this.state.cargando}>
                         <span> <Glyphicon glyph='chevron-right' /> </span>
                     </button>
         
