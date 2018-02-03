@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import Fotos from './Fotos'
 import Inicio from './Home'
-import Sonido from './Sonido'
 import Catalogo from './Catalogo'
 
 class App extends Component {
@@ -39,7 +38,6 @@ class App extends Component {
 
     return (
       <div>
-          <Sonido />
 
           <Tabs value={this.state.seleccionado}
                 onChange={this.handleChange} >

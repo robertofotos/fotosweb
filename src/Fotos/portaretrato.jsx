@@ -7,7 +7,7 @@ class PortaRetrato extends Component {
         super(props)
             this.state = {
                 img:     '',
-                fotoActual: 0,
+                fotoActual: Math.floor(Math.random() * this.props.totalDeFotos),
                 cargando: false,
             }
         
@@ -50,12 +50,13 @@ class PortaRetrato extends Component {
                 <div className="title">{this.props.title}</div>
 
                 <div className='galeria sombra'>
+                        
+                    <div className="cargando">
+                        {this.state.cargando && <img src="/img/cargando1.gif"
+                                                    className="cargando" alt='' />}
+                    </div>    
 
-                    <img className="imagen" src={this.state.img} alt='' />
-            
                     <button className="anterior"
-                            name="anterior"
-                            id="anterior"
                             onClick={()=>this.cargarImg('anterior')} 
                             disabled={this.state.cargando} >
                         <span> <Glyphicon glyph='chevron-left'/> </span>
@@ -63,14 +64,11 @@ class PortaRetrato extends Component {
             
                     <button className="siguiente"
                             onClick={()=>this.cargarImg('siguiente')} 
-                            name="siguiente"
                             disabled={this.state.cargando}>
                         <span> <Glyphicon glyph='chevron-right' /> </span>
                     </button>
         
-                    <div className="cargando">
-                        {this.state.cargando && 'cargando...'}
-                    </div>    
+                    <img className="imagen" src={this.state.img} alt='' />
                                 
                 </div>
             </div>
