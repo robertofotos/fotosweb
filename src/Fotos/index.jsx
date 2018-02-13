@@ -9,6 +9,9 @@ class MisFotos extends Component {
             <div>
                 <img src="/img/banner2.jpg" className="centro img-responsive" alt="Roberto Miguel - Arte Fotográfico" />
                 <LazyLoad height={200} overflow={true} once={true}>
+                    <PortaRetrato galeria="adopcion" title="Campaña Solidaria 'Adoptame'" totalDeFotos={122} />
+                </LazyLoad>
+                 <LazyLoad height={200} overflow={true} once={true}>
                     <PortaRetrato galeria="ballroom" title="Arte Escénico: Ballroom" totalDeFotos={34} />
                 </LazyLoad>
                 <LazyLoad height={200} overflow={true} once={true}>
